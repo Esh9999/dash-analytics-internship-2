@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Аналитика</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <h1>Аналитика</h1>
+        <p>Временной ряд событий за последние дни</p>
+      </div>
+
+      <nav class="tabs" aria-label="Навигация по вкладкам">
+        <a class="tab" href="/dashboards.html">Дашборды</a>
+        <a class="tab active" href="/analytics.html">Аналитика</a>
+      </nav>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>События за последние <span id="days">—</span> дней</h2>
+        <p class="muted" id="apiStatus"></p>
+
+        <div class="kpis" style="margin-top: 12px;">
+          <div class="kpi">
+            <div class="value" id="totalInRange">—</div>
+            <div class="label">Суммарно событий за период</div>
+          </div>
+          <div class="kpi">
+            <div class="value">14</div>
+            <div class="label">Период на графике (дней)</div>
+          </div>
+          <div class="kpi">
+            <div class="value">bar</div>
+            <div class="label">Тип графика (canvas)</div>
+          </div>
+        </div>
+
+        <div class="canvas-wrap" style="margin-top: 14px;">
+          <canvas id="chart"></canvas>
+        </div>
+
+        <p class="muted" style="margin-top: 12px;">
+          График строится на клиенте, данные приходят с сервера по <code>/api/series</code>.
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      Совет: откройте «Дашборды» и нажмите «Сгенерировать событие», затем вернитесь сюда — график обновится.
+    </footer>
+  </div>
+
+  <script type="module" src="/js/analytics.js"></script>
+</body>
+</html>

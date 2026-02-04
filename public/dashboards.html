@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дашборды</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <h1>Дашборды</h1>
+        <p>Учебный мини-проект (Node.js + нативный JS)</p>
+      </div>
+
+      <nav class="tabs" aria-label="Навигация по вкладкам">
+        <a class="tab active" href="/dashboards.html">Дашборды</a>
+        <a class="tab" href="/analytics.html">Аналитика</a>
+      </nav>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <div class="row">
+          <h2>Сводка событий</h2>
+          <div class="row">
+            <button class="btn" id="btnRefresh">Обновить</button>
+            <button class="btn" id="btnEvent">Сгенерировать событие</button>
+          </div>
+        </div>
+        <p class="muted" id="apiStatus"></p>
+
+        <div class="kpis" style="margin-top: 12px;">
+          <div class="kpi">
+            <div class="value" id="totalEvents">—</div>
+            <div class="label">Всего событий в системе</div>
+          </div>
+          <div class="kpi">
+            <div class="value" id="dashCount">—</div>
+            <div class="label">События из «Дашбордов»</div>
+          </div>
+          <div class="kpi">
+            <div class="value" id="analyticsCount">—</div>
+            <div class="label">События из «Аналитики»</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Последние 5 событий</h2>
+        <ul class="list" id="lastEvents"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Проверка страницы ошибки</h2>
+        <p class="muted">
+          Если перейти по несуществующему адресу, сервер вернёт <code>error.html</code>.
+        </p>
+        <a class="btn" href="/this-page-does-not-exist">Открыть несуществующую страницу</a>
+      </section>
+    </div>
+
+    <footer>
+      Сервер хранит события в файле <code>data/events.json</code>. Это упрощённая демонстрация обмена данными клиент ↔ сервер.
+    </footer>
+  </div>
+
+  <script type="module" src="/js/dashboards.js"></script>
+</body>
+</html>

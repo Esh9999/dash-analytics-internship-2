@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ошибка</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <h1>Ошибка: страница не найдена</h1>
+        <p>Вы можете вернуться к дашбордам</p>
+      </div>
+
+      <nav class="tabs" aria-label="Навигация по вкладкам">
+        <a class="tab active" href="/dashboards.html">Дашборды</a>
+        <a class="tab" href="/analytics.html">Аналитика</a>
+      </nav>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Что произошло</h2>
+        <p class="muted">
+          Запрошенный путь: <code id="path">—</code>
+        </p>
+        <p class="muted">
+          Сервер вернул эту страницу как <code>404</code> (не найдено).
+        </p>
+        <div class="row" style="margin-top: 12px;">
+          <a class="btn" href="/dashboards.html">Вернуться к Дашбордам</a>
+          <a class="btn" href="/analytics.html">Перейти к Аналитике</a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Подсказка: проверьте правильность URL или используйте вкладки вверху страницы.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("path").textContent = window.location.pathname;
+  </script>
+</body>
+</html>
